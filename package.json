@@ -1,6 +1,6 @@
 {
   "name": "nx-auto-link",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auto link for next.",
   "directories": {
     "lib": "lib"
@@ -11,7 +11,7 @@
     "prebuild": "yarn version --patch",
     "build": "gem build *.gemspec",
     "pubpush": "gem push *.gem",
-    "unpublish":"gem yank nx-auto-link -v '0.1.0'"
+    "unpublish": "gem yank nx-auto-link -v '0.1.0'"
   },
   "repository": {
     "type": "git",
