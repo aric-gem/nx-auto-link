@@ -11,9 +11,22 @@ gem 'nx-auto-link', git: 'git@github.com:afeiship/nx-auto-link.git'
 
 ## usage
 ```rb
-Nx::AutoLink::hello
+Nx::AutoLink::start(html, tags)
 
-# hello world
+html = '<article class="jsw-content">
+ <p>
+  首先要先下载安装包或者建议：
+ </p>
+ <p>
+  ①win7，win8，win10系统，建议下载python3.7.4版本：
+ </p>
+</article>';
+
+tags = [
+    { name: "下载", url: "http://www.baidu.com/tag/2.html" },
+    { name: "建议", url: "http://www.baidu.com/tag/1.html" },
+    { name: "python", url: "http://www.baidu.com/tag/5.html" },
+];
 ```
 
 ## build/publish
