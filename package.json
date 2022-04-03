@@ -1,0 +1,26 @@
+{
+  "name": "nx-auto-link",
+  "version": "1.0.0",
+  "description": "Auto link for next.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "clean": "rm -rf *.gem",
+    "test": "ruby __tests__/index.rb",
+    "prebuild": "yarn version --patch",
+    "build": "gem build *.gemspec",
+    "pubpush": "gem push *.gem",
+    "unpublish":"gem yank nx-auto-link -v '0.1.0'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afeiship/nx-auto-link.git"
+  },
+  "author": "afei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afeiship/nx-auto-link/issues"
+  },
+  "homepage": "https://js.work"
+}
