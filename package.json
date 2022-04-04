@@ -8,8 +8,7 @@
   "scripts": {
     "clean": "rm -rf *.gem",
     "test": "ruby __tests__/index.rb",
-    "prebuild": "yarn version --patch",
-    "build": "gem build *.gemspec",
+    "build": "npm run clean && gem build *.gemspec",
     "pubpush": "gem push *.gem",
     "unpublish": "gem yank nx-auto-link -v '0.1.0'"
   },
