@@ -13,16 +13,16 @@ module Nx
       # ]
 
       paragraphs.each do |item|
-        processed_html = item.content
+        processed_html = item.inner_html
         tags.reject { |tag| tag[:processed] }.each do |tag|
           tag_name = tag[:name]
           tag_url = tag[:url]
-          if item.content.include?(tag_name)
+          if item.inner_html.include?(tag_name)
             tag[:processed] = true
-            processed_html = processed_html.sub(
-              tag_name,
-              "<a role=\"tag\" title=\"#{tag_name}\" href=\"#{tag_url}\">#{tag_name}</a>"
-            )
+            tag_str = "<a role=\"tag\" title=\"#{tag_name}\" href=\"#{tag_url}\">#{tag_name}</a>"
+            unless processed_html.include?(tag_str)
+              processed_html = processed_html.sub(tag_name, tag_str)
+            end
           end
         end
         item.inner_html = processed_html
